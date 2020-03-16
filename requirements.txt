@@ -1,0 +1,3 @@
+requests
+Django
+django-crispy-forms==1.7.2

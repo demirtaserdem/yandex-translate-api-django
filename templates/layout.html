@@ -1,0 +1,64 @@
+<!--Yandex Translate Api Python Django
+Erdem Demirtaş
+demirtaserdem@gmail.com
+https://github.com/demirtaserdem/yandex-translate-api-python-django
+https://app2.erdemdemirtas.net
+-->
+<!-- Bootstrap v4.2.1
+ve Jinja Template Kullanularak Hazırlanmıştır. 
+-->
+<!-- Body bloguunu temel alması için oluşturulmuştur -->
+
+<!DOCTYPE html>
+<!-- Static değişkeni eklendi -->
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yandex Translate Api Python Django </title>
+    <!-- Statik değişkeninin kullanım şekli -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- icon dosyası eklenmiştir -->
+    <link rel="icon" href="{% static 'icon/icon1.ico' %}">
+</head>
+<body>
+<!-- İçerik Container içerisine konulmuştur -->
+<div class = "container" id = "container-1" >
+    
+    <!-- Izgaralara Ayırmak için row kolonu kullanulmıştır -->
+    <div class="row" id = "row-1">
+        
+        <!-- Kolon Seçilmiştir -->
+        <div class = "col-md-6 mx-auto" id ="colon-1">
+            
+            <!-- Card oluşturulmuştur -->
+            <div class ="card card-body mt-5" id = "card-1">
+    
+    <!-- Diger dosyalardan extend yapılacak bölüm Ör: -->
+    {% block body %}
+    {% endblock body %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- footer Tüm Sayfayı kaplaması için container sışına yerleştirilmiştir  -->
+<hr>
+<footer class="text-center small">
+        <p><a href="http://www.erdemdemirtas.com.tr" target="_blank">@demirtaserdem</a> - 
+        <a href="https://github.com/demirtaserdem/yandex-translate-api-django" target="_blank">Project Page Github</a></p>
+</footer>
+<hr>
+<script type="text/javascript" src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

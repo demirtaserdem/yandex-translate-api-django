@@ -1,0 +1,69 @@
+<!--Yandex Translate Api Python Django
+Erdem Demirtaş
+demirtaserdem@gmail.com
+https://github.com/demirtaserdem/yandex-translate-api-python-django
+https://app2.erdemdemirtas.net
+-->
+<!-- Bootstrap v4.2.1
+ve Jinja Template Kullanularak Hazırlanmıştır. 
+-->
+
+<!-- layout.html'e extend edilmiştir. -->
+{% extends "layout.html" %} 
+ 
+<!-- layout.htmldeki body block içinde override olmuştur. -->
+{% block body %}
+
+<!-- jinja ile oluşturulan formda bootstrap4 cssini kulanabileceğimiz eklenti -->
+{% load crispy_forms_tags %}
+
+<!-- Başlık -->
+<h3 class="heading display-5  pb-3" id = "title-1">Yandex Translate Api Python Django</h3>
+
+<!-- Form Alanı -->
+<form method="post" id = "form-1">
+{% csrf_token %}
+<div class="form-group" id = "fg-1">
+    <!--
+    <label class ="form-label" id = "fl-1">Türkçe Kelimeyi Giriniz: </label>
+    Kelime Giriş Alanı
+    <input type="text" class="form-control" name = "input_word" autocomplete="off" placeholder="" autofocus required>
+    -->
+    <!-- Form crispy ile ŞEkillendirilmiş hali -->
+    {{form|crispy}}
+</div>
+<hr>
+
+<!-- Çevirilen kelime -->
+<div class="form-group" id = "fg-2">
+    <p>İngilizce Çeviri:</p>
+    {% if info %}
+        <input type="text" readonly class="form-control" name = "output_word" value="{{info.input_word}} --->>> {{info.output_word}}" autocomplete="off">
+    {% else %}
+        <input type="text" readonly class="form-control" name = "output_word" autocomplete="off">
+    {% endif %}
+</div>
+
+<!-- Çevir Butonu Bölümü -->
+<div class="form-group" id = "fg-3">
+    <input id ="submitbtn" type="submit" value = "Çevir" class = "btn btn-danger">
+</div>
+</form>
+
+<!-- Son Arananlar listesi Bölümü Jinja kullanılmıştır  -->
+<div class="form-group" id = "fg-4">
+<p>Son Arananlar: </p>
+{% if allsearch %}
+
+<textarea class = "form-control" rows ="5"  readonly>{% for search in allsearch %}
+{{search.input_word}} ---->>> {{search.output_word}}{% endfor %}</textarea>
+{% else %}
+<textarea class = "form-control" rows ="5" readonly></textarea>
+{% endif %}
+</div>
+
+<!-- Son Arananları Temizle butonu -->
+<div class="form-group" id = "fg-5">
+<a href="/deleteallsearch" class ="btn btn-danger" id = "btn_clear">Son Arananları Temizle</a>
+</div>
+{% endblock body %}
