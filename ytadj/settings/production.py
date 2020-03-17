@@ -1,18 +1,14 @@
 from ytadj.settings.base import *
 
-ALLOWED_HOSTS = ['app2.demirtas.biz',]
+ALLOWED_HOSTS = ['app2.demirtas.biz']
 DEBUG = False
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '{Your Name}',
-        'USER': '{Your User}',
-        'PASSWORD': '{Your Password}',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+DATABASE_ENGINE = config.get('database', 'DATABASE_ENGINE')
+DATABASE_NAME = config.get('database', 'DATABASE_NAME')
+DATABASE_USER = config.get('database', 'DATABASE_USER')
+DATABASE_PASSWORD = config.get('database', 'DATABASE_PASSWORD')
+DATABASE_HOST = config.get('database', 'DATABASE_HOST')
+DATABASE_PORT = config.get('database', 'DATABASE_PORT')
 
 #ssl settings
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

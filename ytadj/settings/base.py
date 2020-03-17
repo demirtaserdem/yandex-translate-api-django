@@ -8,16 +8,21 @@ https://app2.demirtas.biz
 """
 
 import os
+from configparser import RawConfigParser
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+config = RawConfigParser()
+PROPERTIES_DIR = os.path.join(BASE_DIR, 'properties.ini')
+config.read(PROPERTIES_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '{Your Secret Key}'
+SECRET_KEY = config.get('secrets','SECRET_KEY')
 
 
 # Application definition

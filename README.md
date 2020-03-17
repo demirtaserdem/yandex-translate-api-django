@@ -98,5 +98,7 @@ Amazon Ec2 - PostgreSQL - Amazon Route 53 - Amazon Route 53 - Ubuntu 18.04 - ngi
 gunicorn -  letsencrypt kullanılarak hazırlanmıştır.
 
 ## Kaynak
+
 [1] : https://github.com/barissaslan/django-projesini-yayina-alma
+
 [2] : https://tech.yandex.com/translate/
