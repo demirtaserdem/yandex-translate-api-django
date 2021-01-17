@@ -1,4 +1,8 @@
 # Yandex Translate API - Python - Django 
+### Yandex Translate Free Api artık hizmet vermediğinden uygulamanın çalışan sayfası yoktur.
+https://yandex.com/dev/translate/doc/dg/concepts/about.html
+
+---
 
 Yandex Translate Api kullanılarak,  
 Türkçe - İngilizce çeviri yapan bir Django uygulamasıdır. 
